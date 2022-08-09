@@ -1,0 +1,46 @@
+#logo {
+	display: inline;
+	width: 30px;
+	height: 30px;
+	margin: 0px 140px 0px 0px;
+}
+
+.mainHeader {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	height: 80px;
+}
+
+.buttonsHeader {
+	display: inline;
+	margin: 60px 32px 32px 100px;
+}
+
+.currencyCart {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+	margin-right: 100px;
+
+	width: 204px;
+	height: 40px;
+	right: 101px;
+	top: 23px;
+}
+
+.currency {
+	width: 12px;
+	height: 29px;
+
+	font-family: "Raleway";
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 160%;
+	/* identical to box height, or 29px */
+
+	color: #1d1f22;
+}

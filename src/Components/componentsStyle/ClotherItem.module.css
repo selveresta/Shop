@@ -1,0 +1,53 @@
+.imgItem {
+	margin-top: 24px;
+	display: flex;
+	justify-content: center;
+}
+
+.clotherItem {
+	transition: width 1.5s, height 1.5s, transform 1.5s;
+	margin: 40px;
+}
+
+.clotherItem:hover {
+	box-shadow: 0px 1.5px 1.5px 1.5px gray;
+	transform: scale(1.05);
+}
+
+.imagePic {
+	width: 354px;
+	height: 330px;
+}
+
+.nameItem {
+	width: 354px;
+	height: 29px;
+	padding-left: 10px;
+
+	font-family: "Raleway";
+	font-style: normal;
+	font-weight: 300;
+	font-size: 18px;
+	line-height: 160%;
+	/* identical to box height, or 29px */
+}
+
+.priceItem {
+	width: 58px;
+	height: 29px;
+	padding-left: 10px;
+	/* --price-regular-font */
+
+	font-family: "Raleway";
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 160%;
+	/* identical to box height, or 29px */
+
+	text-align: left;
+}
+
+.clotherLink {
+	color: black;
+}

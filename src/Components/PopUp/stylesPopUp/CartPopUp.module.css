@@ -1,0 +1,13 @@
+#Cart:hover {
+	box-shadow: 0px 1.5px 1.5px 1.5px gray;
+}
+
+.cartBtn {
+	background-color: transparent;
+	border: 0px;
+	margin-left: 15px;
+}
+
+.mainBlockCart {
+	background-color: white;
+}
