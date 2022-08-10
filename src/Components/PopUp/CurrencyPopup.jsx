@@ -2,8 +2,9 @@ import React from "react";
 import Vector from "../../images/Vector.png";
 import Popup from "reactjs-popup";
 import classes from "./stylesPopUp/CurrencyPopUp.module.css";
+import CurrencyButton from "../UI/buttons/CurrencyButton";
 
-const CurrencyPopup = () => {
+const CurrencyPopup = ({ props, set }) => {
 	return (
 		<Popup
 			trigger={
@@ -16,7 +17,10 @@ const CurrencyPopup = () => {
 			closeOnDocumentClick>
 			{" "}
 			<div className={classes.currencyContent}>
-				<button className={classes.currencyContentItem}>
+				{props.map((btn, index) => (
+					<CurrencyButton set={set} key={index + 1} props={btn}></CurrencyButton>
+				))}
+				{/* <button className={classes.currencyContentItem}>
 					<span className={classes.currencySpan}>$</span> USD
 				</button>
 				<button className={classes.currencyContentItem}>
@@ -24,7 +28,7 @@ const CurrencyPopup = () => {
 				</button>
 				<button className={classes.currencyContentItem}>
 					<span className={classes.currencySpan}>¥ </span> JPY
-				</button>
+				</button> */}
 			</div>
 		</Popup>
 	);

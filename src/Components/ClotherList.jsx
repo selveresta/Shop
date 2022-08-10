@@ -6,7 +6,7 @@ function ClotherList({ clothers }) {
 	return (
 		<div className={classes.mainClotherItems}>
 			{clothers.map((clother) => (
-				<ClotherItem clother={clother}></ClotherItem>
+				<ClotherItem key={clother.id} clother={clother}></ClotherItem>
 			))}
 		</div>
 	);
