@@ -1,10 +1,14 @@
 import React from "react";
 import classes from "./buttonsStyle/CategoryButton.module.css";
 
-const CategoryButton = ({ children, ...props }) => {
+const CategoryButton = ({ name, set }) => {
 	return (
-		<button {...props} className={classes.CategoryButton}>
-			{children}
+		<button
+			onClick={() => {
+				set(name);
+			}}
+			className={classes.CategoryButton}>
+			{name}
 		</button>
 	);
 };

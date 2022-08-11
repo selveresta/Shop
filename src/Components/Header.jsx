@@ -7,29 +7,16 @@ import classes from "./componentsStyle/Header.module.css";
 import { useQuery } from "@apollo/client";
 import { GET_CURRENCIES } from "../Data/Query";
 
-const Header = () => {
-	const { data, loading, error } = useQuery(GET_CURRENCIES);
-	const [currencies, setCurrencies] = useState([]);
-	const [currentCurrency, setCurrentCurrency] = useState("$");
-
-	useEffect(() => {
-		if (!loading) {
-			setCurrencies(data.currencies);
-		}
-	}, [data]);
-
-	//current currency callback function
-
-	const newCurrentCurrency = (symbol) => {
-		setCurrentCurrency(symbol);
-	};
-
+const Header = ({ categories, currencies, newCurrentCurrency, currentCurrency, newCategory }) => {
 	return (
 		<header className={classes.mainHeader}>
 			<nav className={classes.buttonsHeader}>
-				<CategoryButton>Woman</CategoryButton>
+				{categories.map((category, index) => (
+					<CategoryButton name={category.name} set={newCategory} key={index + 1}></CategoryButton>
+				))}
+				{/* <CategoryButton>Woman</CategoryButton>
 				<CategoryButton>Man</CategoryButton>
-				<CategoryButton>Kids</CategoryButton>
+				<CategoryButton>Kids</CategoryButton> */}
 			</nav>
 			<img id={classes.logo} alt='logo' src={logo}></img>
 			<div className={classes.currencyCart}>
