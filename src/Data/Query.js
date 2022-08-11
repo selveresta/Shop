@@ -37,10 +37,12 @@ const GET_ALL_PRODUCT = gql`
 const GET_CATEGORY_DATA = gql`
 	query {
 		categories {
+			name
 			products {
 				id
 				name
 				gallery
+				category
 				prices {
 					currency {
 						label
@@ -72,4 +74,12 @@ const GET_CURRENCIES = gql`
 	}
 `;
 
-export { GET_ALL_PRODUCT, GET_CATEGORY_DATA, GET_ID_PRODUCTS, GET_CURRENCIES };
+const GET_CATEGORIES_NAMES = gql`
+	query {
+		categories {
+			name
+		}
+	}
+`;
+
+export { GET_ALL_PRODUCT, GET_CATEGORY_DATA, GET_ID_PRODUCTS, GET_CURRENCIES, GET_CATEGORIES_NAMES };

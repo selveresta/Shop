@@ -6,8 +6,7 @@
 }
 
 .imgClother {
-	width: 121px;
-	height: 190px;
+	width: 145px;
 }
 
 .imgClother img {
@@ -16,15 +15,22 @@
 }
 
 .attributesClother {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	border: 1px black solid;
 	width: 136px;
-	height: 52px;
+}
+
+.size {
+	display: flex;
+	flex-direction: column;
 }
 
 .sizeAttr {
 	display: flex;
 	justify-content: space-around;
 	flex-wrap: wrap;
-
 	margin-bottom: 10px;
 }
 
@@ -35,6 +41,11 @@
 	border: 1px black solid;
 	height: 24px;
 	width: 24px;
+}
+
+.color {
+	display: flex;
+	flex-direction: column;
 }
 
 .colorAttr {
@@ -55,9 +66,12 @@
 }
 
 .text {
+	word-wrap: break-word;
 	font-family: "Raleway";
 	font-style: normal;
 	font-weight: 300;
 	font-size: 16px;
 	margin-bottom: 10px;
+	text-align: start;
+	border: 1px red solid;
 }

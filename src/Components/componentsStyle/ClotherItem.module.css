@@ -46,4 +46,5 @@
 	/* identical to box height, or 29px */
 
 	text-align: left;
+	display: inline;
 }
