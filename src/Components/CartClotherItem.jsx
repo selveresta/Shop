@@ -1,17 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import Counter from "./Counter";
 import classes from "./componentsStyle/CartClotherItem.module.css";
 import Pic from "../images/clotherPic.png";
 
-const CartClotherItem = () => {
+const CartClotherItem = (props) => {
 	return (
 		<div className={classes.oneItem}>
 			<div className={classes.attributesClother}>
-				<p className={classes.text}>Name</p>
-				<p className={classes.text}>Price</p>
+				<span className={classes.text}>Name</span>
+				<span className={classes.text}>Price</span>
 				<div className={classes.size}>
-					<div className={classes.text}>Size:</div>
+					<span className={classes.text}>Size:</span>
 					<div className={classes.sizeAttr}>
+						{/* Create component size square */}
 						<div> XS </div>
 						<div> S </div>
 						<div> M </div>
@@ -19,8 +20,10 @@ const CartClotherItem = () => {
 					</div>
 				</div>
 				<div className={classes.color}>
-					<div className={classes.text}>Color:</div>
+					<span className={classes.text}>Color:</span>
 					<div className={classes.colorAttr}>
+						{/* Create component color square */}
+
 						<div> </div>
 						<div> </div>
 						<div> </div>
