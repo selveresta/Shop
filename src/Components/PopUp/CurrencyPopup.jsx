@@ -20,15 +20,6 @@ const CurrencyPopup = ({ props, set }) => {
 				{props.map((btn, index) => (
 					<CurrencyButton set={set} key={index + 1} props={btn}></CurrencyButton>
 				))}
-				{/* <button className={classes.currencyContentItem}>
-					<span className={classes.currencySpan}>$</span> USD
-				</button>
-				<button className={classes.currencyContentItem}>
-					<span className={classes.currencySpan}>€ </span> EUR
-				</button>
-				<button className={classes.currencyContentItem}>
-					<span className={classes.currencySpan}>¥ </span> JPY
-				</button> */}
 			</div>
 		</Popup>
 	);
