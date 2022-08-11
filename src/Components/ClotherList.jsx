@@ -2,11 +2,11 @@ import React from "react";
 import ClotherItem from "./ClotherItem";
 import classes from "./componentsStyle/ClotherList.module.css";
 
-function ClotherList({ clothers }) {
+function ClotherList({ products, currentCurrency }) {
 	return (
 		<div className={classes.mainClotherItems}>
-			{clothers.map((clother) => (
-				<ClotherItem key={clother.id} clother={clother}></ClotherItem>
+			{products.map((clother) => (
+				<ClotherItem key={clother.id} clother={clother} currentCurrency={currentCurrency}></ClotherItem>
 			))}
 		</div>
 	);

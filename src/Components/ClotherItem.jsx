@@ -1,16 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import classes from "./componentsStyle/ClotherItem.module.css";
 
-const ClotherItem = (props) => {
-	const str = props.clother.prices[0].amount + props.clother.prices[0].currency.symbol;
+const ClotherItem = ({ clother, currentCurrency }) => {
+	const [str, setStr] = useState("100");
+	let index;
+
+	const price = () => {
+		let i = 0;
+		clother.prices.forEach((element) => {
+			if (element.currency.symbol == currentCurrency) {
+				index = i;
+				return i;
+			}
+			i++;
+		});
+	};
+
+	useEffect(() => {
+		price();
+		setStr(clother.prices[index].amount + " " + currentCurrency);
+	}, [currentCurrency]);
 
 	return (
 		<div className={classes.clotherItem}>
 			<div className={classes.imgItem}>
-				<img alt='img' className={classes.imagePic} src={props.clother.gallery[0]}></img>
+				<img alt='img' className={classes.imagePic} src={clother.gallery[0]}></img>
 			</div>
 			<div className={classes.nameItem}>
-				<p>{props.clother.name}</p>
+				<p>{clother.name}</p>
 			</div>
 			<div className={classes.priceItem}>{str}</div>
 		</div>
