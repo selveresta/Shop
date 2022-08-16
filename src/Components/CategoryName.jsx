@@ -1,6 +1,4 @@
-import { useQuery } from "@apollo/client";
-import React, { useEffect, useState } from "react";
-import { GET_CATEGORIES_NAMES } from "../Data/Query";
+import React from "react";
 import classes from "./componentsStyle/CategoryName.module.css";
 
 function CategotyName({ currentCategory }) {
