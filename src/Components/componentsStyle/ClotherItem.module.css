@@ -11,6 +11,7 @@
 
 .clotherItem:hover {
 	box-shadow: 0px 1.5px 1.5px 1.5px gray;
+	cursor: pointer;
 	transform: scale(1.05);
 }
 

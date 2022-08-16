@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import classes from "./componentsStyle/ClotherItem.module.css";
 
-const ClotherItem = ({ clother, currentCurrency }) => {
+const ClotherItem = ({ clother, currentCurrency, openPdp, set }) => {
 	const [str, setStr] = useState("100");
 	let index;
 
 	const price = () => {
 		let i = 0;
 		clother.prices.forEach((element) => {
-			if (element.currency.symbol == currentCurrency) {
+			if (element.currency.symbol === currentCurrency) {
 				index = i;
 				return i;
 			}
@@ -22,7 +22,12 @@ const ClotherItem = ({ clother, currentCurrency }) => {
 	}, [currentCurrency]);
 
 	return (
-		<div className={classes.clotherItem}>
+		<div
+			onClick={() => {
+				openPdp();
+				set(clother.id);
+			}}
+			className={classes.clotherItem}>
 			<div className={classes.imgItem}>
 				<img alt='img' className={classes.imagePic} src={clother.gallery[0]}></img>
 			</div>

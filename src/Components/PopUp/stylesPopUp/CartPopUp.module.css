@@ -10,4 +10,25 @@
 
 .mainBlockCart {
 	background-color: white;
+	margin-top: 31px;
+}
+
+.total {
+	display: flex;
+	justify-content: space-between;
+}
+
+.counterItems {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	margin-left: 15px;
+	top: 32px;
+	border-radius: 100px;
+	width: 15px;
+	height: 15px;
+	text-align: center;
+	background-color: black;
+	color: white;
 }
