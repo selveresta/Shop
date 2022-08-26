@@ -2,38 +2,69 @@ import React, { useState } from "react";
 import Counter from "./Counter";
 import classes from "./componentsStyle/CartClotherItem.module.css";
 import Pic from "../images/clotherPic.png";
+import { useEffect } from "react";
 
-const CartClotherItem = (props) => {
+const CartClotherItem = ({ product, currency }) => {
+	const [index, setIndex] = useState(0);
+	const determineCurrency = () => {
+		let i = 0;
+		product.prices.map((price) => {
+			if (price.currency.symbol === currency) {
+				setIndex(i);
+			}
+			i++;
+		});
+	};
+
+	useEffect(() => {
+		determineCurrency();
+		console.log(index);
+	}, [currency]);
+
 	return (
 		<div className={classes.oneItem}>
 			<div className={classes.attributesClother}>
-				<span className={classes.text}>Name</span>
-				<span className={classes.text}>Price</span>
-				<div className={classes.size}>
-					<span className={classes.text}>Size:</span>
-					<div className={classes.sizeAttr}>
-						{/* Create component size square */}
-						<div> XS </div>
-						<div> S </div>
-						<div> M </div>
-						<div> L </div>
+				<span className={classes.text}>{product.name}</span>
+				<span className={classes.text}>
+					{product.prices[index].currency.symbol}
+					{product.prices[index].amount}
+				</span>
+				{product.attributes[0] !== undefined ? (
+					<div>
+						<div className={classes.text}>{product.attributes[0].name}</div>
+						<div className={classes.attributeList}>
+							{product.attributes[0].items.map((size) => (
+								<button
+									style={{ backgroundColor: size.value }}
+									className={classes.oneAttr}
+									key={size.id}>
+									{size.value.includes("#") ? "" : size.value}
+								</button>
+							))}
+						</div>
 					</div>
-				</div>
-				<div className={classes.color}>
-					<span className={classes.text}>Color:</span>
-					<div className={classes.colorAttr}>
-						{/* Create component color square */}
-
-						<div> </div>
-						<div> </div>
-						<div> </div>
-						<div> </div>
+				) : (
+					<div></div>
+				)}
+				{product.attributes[1] !== undefined ? (
+					<div>
+						<div className={classes.text}>{product.attributes[1].name}</div>
+						<div className={classes.attributeList}>
+							{product.attributes[1].items.map((color) => (
+								<button
+									style={{ backgroundColor: color.value }}
+									className={classes.oneAttr}
+									key={color.id}></button>
+							))}
+						</div>
 					</div>
-				</div>
+				) : (
+					<div></div>
+				)}
 			</div>
 			<Counter></Counter>
 			<div className={classes.imgClother}>
-				<img alt='qweqwe' src={Pic}></img>
+				<img alt='qweqwe' src={product.gallery[0]}></img>
 			</div>
 		</div>
 	);

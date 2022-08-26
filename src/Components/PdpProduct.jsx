@@ -65,8 +65,11 @@ function PdpProduct({ product, addToCart, activeModule, currentCurrency }) {
 							<div className={classes.text}>{product.attributes[0].name}</div>
 							<div className={classes.attributeList}>
 								{product.attributes[0].items.map((size) => (
-									<button className={classes.oneAttr} key={size.id}>
-										{size.value}
+									<button
+										style={{ backgroundColor: size.value }}
+										className={classes.oneAttr}
+										key={size.id}>
+										{size.value.includes("#") ? "" : size.value}
 									</button>
 								))}
 							</div>
@@ -79,8 +82,11 @@ function PdpProduct({ product, addToCart, activeModule, currentCurrency }) {
 							<div className={classes.text}>{product.attributes[1].name}</div>
 							<div className={classes.attributeList}>
 								{product.attributes[1].items.map((color) => (
-									<button className={classes.oneAttr} key={color.id}>
-										{color.value}
+									<button
+										style={{ backgroundColor: color.value }}
+										className={classes.oneAttr}
+										key={color.id}>
+										{color.value.includes("#") ? "" : color.value}
 									</button>
 								))}
 							</div>

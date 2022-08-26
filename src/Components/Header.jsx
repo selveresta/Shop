@@ -5,17 +5,8 @@ import CurrencyPopup from "./PopUp/CurrencyPopup";
 import CartPopUp from "./PopUp/CartPopUp";
 import classes from "./componentsStyle/Header.module.css";
 
-const Header = ({
-	categories,
-	currencies,
-	newCurrentCurrency,
-	currentCurrency,
-	newCategory,
-	closeModal,
-	cartProducts,
-}) => {
+const Header = ({ categories, currencies, newCurrentCurrency, currency, newCategory, closeModal, cartProducts }) => {
 	const [ariaHidden, setAraiHidden] = useState("true");
-
 	function showOverlay() {
 		if (ariaHidden === "true") {
 			setAraiHidden("false");
@@ -36,12 +27,9 @@ const Header = ({
 				</nav>
 				<img id={classes.logo} alt='logo' src={logo}></img>
 				<div className={classes.currencyCart}>
-					<span className={classes.currency}>{currentCurrency}</span>
+					<span className={classes.currency}>{currency}</span>
 					<CurrencyPopup set={newCurrentCurrency} props={currencies}></CurrencyPopup>
-					<CartPopUp
-						currentCurrency={currentCurrency}
-						cartProducts={cartProducts}
-						showOverlay={showOverlay}></CartPopUp>
+					<CartPopUp currency={currency} cartProducts={cartProducts} showOverlay={showOverlay}></CartPopUp>
 				</div>
 			</header>
 			<div className={classes.overlay} aria-hidden={ariaHidden}></div>

@@ -18,6 +18,34 @@
 	justify-content: space-between;
 }
 
+.buttonsCart {
+	display: flex;
+	justify-content: space-between;
+}
+
+.buttonsCart button {
+	width: 140px;
+	height: 43px;
+	margin: 15px;
+	background-color: #5ece7b;
+	color: white;
+	border: 0px;
+	font-weight: bold;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.buttonsCart button:hover {
+	transform: scale(1.13);
+	transition: 200ms;
+}
+
+#viewBag {
+	border: 1px black solid;
+	color: black;
+	background-color: transparent;
+}
+
 .counterItems {
 	display: flex;
 	justify-content: center;

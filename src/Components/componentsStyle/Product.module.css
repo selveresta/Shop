@@ -6,6 +6,11 @@
 }
 
 .text {
+	font-family: "Raleway";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 30px;
+	line-height: 27px;
 }
 
 .attributeList {
@@ -29,7 +34,7 @@
 }
 
 .imgClother {
-	width: 145px;
+	width: 200px;
 }
 
 .imgClother img {
@@ -41,8 +46,15 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
-	border: 1px black solid;
-	width: 136px;
+	width: 80%;
+}
+
+.brandName {
+	font-family: "Raleway";
+	font-style: normal;
+	font-weight: 600;
+	font-size: 30px;
+	line-height: 27px;
 }
 
 .size {
@@ -61,7 +73,6 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border: 1px black solid;
 	height: 24px;
 	width: 24px;
 }
@@ -82,7 +93,6 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border: 1px black solid;
 	height: 24px;
 	width: 24px;
 	background-color: aqua;
@@ -96,5 +106,4 @@
 	font-size: 16px;
 	margin-bottom: 10px;
 	text-align: start;
-	border: 1px red solid;
 }
